@@ -1,0 +1,285 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family= Abril+Fatface & display=swap');
+
+
+:root {
+    --corVermelhaClara: (#804040);
+    --corVermalhaEscura : (#4d0000);
+    --bgColorBody : linear-gradient(to right, #804040, black,#4d0000);
+    --corPretaPrateada : linear-gradient(to left,rgb(64, 64, 64, 0.435), rgba(140, 140, 140, 0.425), rgba(89, 89, 89, 0.435));
+    --corAzulLuminos : linear-gradient(to left, rgba(102, 179, 255, 0.712), #99bbff, #99c2ff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Abril Fatface', cursive;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: var(--bgColorBody);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transform: translate(.4s ease-in);
+    transition: all .3s ease-in;
+}
+header {
+    width: 100%;
+    height: 10%;
+    background: var(--corPretaPrateada);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    opacity: transparent;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+}
+
+h1 {
+    font-size: 4em;
+    color: rgb(248, 65, 65);
+    min-width: 40%;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 60%;
+    height: 100%;
+}
+
+.itens-menu {
+    display: flex;
+    align-items: end;
+    justify-content: space-evenly;
+    width: 100%;
+    bottom: 30px;
+    right: 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+.itens-menu li a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: rgb(248, 65, 65);
+    padding: 10px 4px;
+    border-radius: 8px;
+}
+
+.itens-menu li a:hover {
+    box-shadow: 2px 2px #66b3ff;
+}
+
+.cabecalho .menu-icon{
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+}
+
+/* Main Area */
+
+.cantainer-main {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    position: relative;
+    top: 10%;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+article h3 {
+    color: #66b3ff;
+    font-size: 2.3em;
+    text-align: center;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    color: white;
+}
+
+article .zed {
+    font-size: 2em;
+    color: #804040;
+}
+
+
+/* Imagem */
+figure {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 6px;
+    opacity: .7;
+}
+
+
+.roda-pe  footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.roda-pe p {
+    color: white;
+    font-size: 1em;
+}
+
+/* Configurção para tablete e notbook */
+
+@media (max-width: 1080px){
+    .cantainer-main {
+        background-image: url(/imagens/Zed_02.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        transform: translate(.0956s ease-in);
+        transition: all .3s ease-in-out;
+    }
+    .menu {
+        display: none;
+    }
+    .cabecalho .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+    article h3 {
+        color: #ff0303;
+        font-weight: bolder;
+        font-size: 1.4em;
+        text-align: center;
+    }
+    article h3::after {
+        content: ' ';
+        display: block;
+        width: 50%;
+        height: 4px;
+        margin: 10px auto;
+        background: currentColor;
+    }
+    article > h2 {
+        font-size: 1.6em;
+    }
+    article .zed {
+        font-size: 2.5em;
+        color: #b62525;
+    }
+    
+    main > article {
+        display: flex;
+        align-items: center;
+        min-width: 100%;
+    }
+
+    figure {
+        display: none;
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+/* Configuração para Smartphony e Celulares */
+
+
+@media (max-width: 880px) {
+    .cantainer-main {
+        background-image: url(/imagens/Zed_03.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        transform: translate(.0956s ease-in);
+        transition: all .3s ease-in-out;
+    }
+    .menu {
+        display: none;
+    }
+    .cabecalho .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+    article h3 {
+        color: #03ff25;
+        font-weight: bolder;
+        font-size: 2em;
+        text-align: center;
+    }
+    article h3::after {
+        content: ' ';
+        display: block;
+        width: 50%;
+        height: 4px;
+        margin: 10px auto;
+        background: currentColor;
+    }
+    article > h2 {
+        font-size: 1.5em;
+    }
+    article .zed {
+        font-size: 1.9em;
+        color: #03ff25;
+    }
+    main > article {
+        display: flex;
+        align-items: center;
+        min-width: 100%;
+    }
+
+    figure {
+        display: none;
+    }
+    footer {
+        text-align: center;
+    }
+}
