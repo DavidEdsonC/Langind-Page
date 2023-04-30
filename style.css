@@ -172,7 +172,7 @@ figure img {
     font-size: 1em;
 }
 
-/* Configurção para tablete e notbook */
+/* Configurção para tablet*/
 
 @media (max-width: 1080px){
     .cantainer-main {
@@ -228,7 +228,7 @@ figure img {
     }
 }
 
-/* Configuração para Smartphony e Celulares */
+/* Configuração para Celular */
 
 
 @media (max-width: 880px) {
